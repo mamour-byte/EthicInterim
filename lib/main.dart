@@ -1,4 +1,5 @@
 import 'package:ethicinterim/pages/HomePage.dart';
+import 'package:ethicinterim/pages/Search.dart';
 import 'package:ethicinterim/pages/profil.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
@@ -47,6 +48,7 @@ class Home extends StatelessWidget {
           [
             "Accueil",
             "Profil",
+            "Search",
           ][currentIndex],
         ),
         backgroundColor: Colors.brown,
@@ -54,6 +56,7 @@ class Home extends StatelessWidget {
       body: [
         const HomePage(),
         const Profil(),
+        const Search(),
       ][currentIndex],
       bottomNavigationBar: SalomonBottomBar(
         backgroundColor: Colors.brown,
@@ -74,7 +77,14 @@ class Home extends StatelessWidget {
               Icons.message,
               size: 35,
             ),
-            title: const Text("Message"),
+            title: const Text("Profil"),
+          ),
+          SalomonBottomBarItem(
+            icon: const Icon(
+              Icons.person,
+              size: 35,
+            ),
+            title: const Text("search"),
           ),
         ],
       ),
