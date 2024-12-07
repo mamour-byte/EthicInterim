@@ -1,8 +1,8 @@
 import 'package:ethicinterim/pages/HomePage.dart';
 import 'package:ethicinterim/pages/Search.dart';
 import 'package:ethicinterim/pages/profil.dart';
+import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
-import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,35 +51,33 @@ class Home extends StatelessWidget {
             "Search",
           ][currentIndex],
         ),
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.blueGrey,
       ),
       body: [
         const HomePage(),
         const Profil(),
         const Search(),
       ][currentIndex],
-      bottomNavigationBar: SalomonBottomBar(
-        backgroundColor: Colors.brown,
-        currentIndex: currentIndex,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.black87,
-        onTap: (i) => setCurrentIndex(i),
+      bottomNavigationBar: FlashyTabBar(
+        selectedIndex: currentIndex,
+        showElevation: false,
+        onItemSelected: (index) => setCurrentIndex(index),
         items: [
-          SalomonBottomBarItem(
+          FlashyTabBarItem(
             icon: const Icon(
               Icons.home,
               size: 35,
             ),
             title: const Text("Home"),
           ),
-          SalomonBottomBarItem(
+          FlashyTabBarItem(
             icon: const Icon(
               Icons.message,
               size: 35,
             ),
             title: const Text("Profil"),
           ),
-          SalomonBottomBarItem(
+          FlashyTabBarItem(
             icon: const Icon(
               Icons.person,
               size: 35,
